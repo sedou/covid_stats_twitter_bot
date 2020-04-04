@@ -51,7 +51,7 @@ plt.close()
 
 img = '/your_filepath/us_stats_state.png'
 
-msg = f'Covid19 Stats in USA by State on {d2}\n\n#coronavirus #covid19 #CoronaVirusUpdates #COVID_19 #COVID19Pandemic'
+msg = f'Covid19 Stats in USA by State on {d2}'
 
 def post():
     api.update_with_media(img, msg)
