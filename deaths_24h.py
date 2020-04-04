@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
-import requests, tweepy, random
+import requests, random, urllib
+import tweepy
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import matplotlib.pyplot as plt
 from twitter_creds import *
@@ -15,7 +16,13 @@ cases_24h = table_body.find_all('td')[2].get_text()
 deaths_24h = table_body.find_all('td')[4].get_text()
 
 urld = 'https://www.worldometers.info/coronavirus/coronavirus-death-toll/'
-pd = read_html(urld, index_col=False, attrs={'class':'table'})
+user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
+request = urllib.request.Request(urld,headers={'User-Agent': user_agent})
+response = urllib.request.urlopen(request)
+html = response.read()
+
+#urld = 'https://www.worldometers.info/coronavirus/coronavirus-death-toll/'
+pd = read_html(html, index_col=False, attrs={'class':'table'})
 df = pd[0]
 date = df[df.columns[0]]
 total = df[df.columns[1]]
@@ -28,13 +35,15 @@ ax.invert_xaxis()
 plt.grid(True, which='major', axis='y')
 #ax.legend(['Deaths'], loc='upper left')
 graph_image = plt.savefig('corona_dtoll_graph.png')
-img_path = '/yourfilepath/corona_dtoll_graph.png'
-#plt.show()
+img_path = '/home/mongo/Desktop/corona_stats_bot/corona_dtoll_graph.png'
+plt.show()
 
 msg = f'''Coronavirus Deaths & New Cases Today:
 
 Deaths in last 24 hours: {deaths_24h}
-New Cases in last 24 hours: {cases_24h}'''
+New Cases in last 24 hours: {cases_24h}
+
+#coronavirus #COVID19 #CoronaVirusUpdates #COVID_19 #COVID19Pandemic'''
 
 def post_deaths_cases_24h():
     api.update_with_media(img_path, msg)
