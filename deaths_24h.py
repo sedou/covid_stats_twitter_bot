@@ -41,9 +41,7 @@ plt.show()
 msg = f'''Coronavirus Deaths & New Cases Today:
 
 Deaths in last 24 hours: {deaths_24h}
-New Cases in last 24 hours: {cases_24h}
-
-#coronavirus #COVID19 #CoronaVirusUpdates #COVID_19 #COVID19Pandemic'''
+New Cases in last 24 hours: {cases_24h}'''
 
 def post_deaths_cases_24h():
     api.update_with_media(img_path, msg)
