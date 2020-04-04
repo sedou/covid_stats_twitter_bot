@@ -4,4 +4,4 @@ Scrapes data from multiple websites and posts info/graphs on twitter
 
 Examples of graphs:
 
-![t](examples/us_stats_state.png =320x240)
+<img src="examples/us_stats_state.png" height="320" width="240">
