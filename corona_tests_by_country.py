@@ -16,9 +16,7 @@ pair = list(zip(country, total_tests, date))
 random_country = random.choices(pair, weights=None, cum_weights=None, k=1)
 
 res = [[ i for i, j, k in random_country ], [ j for i, j, k in random_country ], [k for i,j,k in random_country]]
-answer = f'''Amount of coronavirus tests done in {res[0]} is {res[1]} as of {res[2]}
-
-#coronavirus #COVID19 #CoronaVirusUpdates #Covid_19'''.replace('[', '').replace(']', '').replace("'", '').replace('nan', 'no data')
+answer = f'''Amount of coronavirus tests done in {res[0]} is {res[1]} as of {res[2]}'''.replace('[', '').replace(']', '').replace("'", '').replace('nan', 'no data')
 
 def post():
     api.update_status(answer)
