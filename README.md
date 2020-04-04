@@ -1,7 +1,8 @@
 # covid_stats_twitter_bot
 Scrapes data from multiple websites and posts info/graphs on twitter.
 
-You can set up these scripts to run at certain times using cron.
+You can set these scripts to run at certain times using cron.
+
 
 Examples of graphs:
 
