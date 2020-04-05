@@ -10,4 +10,6 @@ Examples of graphs:
 
 <img src="examples/corona_dtoll_graph.png" height="320" width="427"> <img src="examples/10countries.png" height="320" width="427">
 
-<img src="examples/infected_world_map.png" height="210" width="427">
+<img src="examples/infected_world_map.png" height="210" width="427"> <img src="examples/coronagraph.png" height="320" width="427">
+
+Link to bot: https://twitter.com/covid_data
