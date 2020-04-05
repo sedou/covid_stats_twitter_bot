@@ -47,7 +47,7 @@ Chronic respiratory disease: {respiratory}
 Hypertension: {hypertension}
 Cancer: {cancer}'''
 
-# posts messageg with bar graph
+# posts message with bar graph
 def post_pre_condition():
     api.update_with_media(img_path_pre_condition, msg)
 post_pre_condition()
