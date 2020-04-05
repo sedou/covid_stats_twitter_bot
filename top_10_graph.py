@@ -37,7 +37,7 @@ plt.xticks(rotation=25)
 plt.yticks(rotation=30)
 plt.title(f'Countries With Most Covid19 Cases (CN excl.) on {d2}')
 plt.savefig('10countries.png', bbox_inches='tight')
-plt.show()
+#plt.show()
 img = '10countries.png'
 
 # message
