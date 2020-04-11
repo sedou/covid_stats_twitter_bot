@@ -142,7 +142,7 @@ ice,india,indo,ire,italy,japan,lithuania,mal,nl,nz,nor,pak,phi,rus,sen,sin,sa,sk
 tk,uk,us,uru,vie]
 
 # chooses random country and cleans up the string
-random_country = random.choice(countries).replace('<p>', '').replace('<strong>', '').replace('</strong>', '').replace('</p>', '').replace('estimate', 'Estimates').replace('Latest', 'Latest Testing')
+random_country = random.choice(countries).replace('<p>', '').replace('<strong>', '').replace('</strong>', '').replace('</p>', '').replace('estimate', 'Estimates').replace('Latest', 'Latest Testing').replace('NA', 'no data')
 
 def post():
     api.update_status(random_country)
